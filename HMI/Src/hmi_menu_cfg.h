@@ -25,67 +25,17 @@ typedef struct
 #define vector_retangle_selection_default     {{0,19,127,28}, {0,29,127,38}, {0,39,127,38}} 
 
 
-#define hmi_menu_item_vector_value              \
-{                                               \
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Voltage,          \
-        .sz_description = "VOLTAGE"             \
-    }                                           \
-    ,                                           \
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Current,          \
-        .sz_description = "CURRENT"             \
-    }                                           \
-    ,                                           \
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Piezo_1,          \
-        .sz_description = "PIEZO 1"             \
-    }                                           \
-    ,                                           \    
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Piezo_2,          \
-        .sz_description = "PIEZO 2"             \
-    }                                           \
-    ,                                           \    
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Piezo_3,          \
-        .sz_description = "PIEZO 3"             \
-    }                                           \
-    ,                                           \    
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Piezo_4,          \
-        .sz_description = "PIEZO 4"             \
-    }                                           \
-    ,                                           \    
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Piezo_5,          \
-        .sz_description = "PIEZO 5"             \
-    }                                           \
-    ,                                           \    
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Piezo_6,          \
-        .sz_description = "PIEZO 6",            \
-    }                                           \
-    ,                                           \    
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Piezo_7 ,         \
-        .sz_description = "PIEZO 7"             \
-    }                                           \
-    ,                                           \    
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Piezo_8,          \
-        .sz_description = "PIEZO 8"             \
-    }                                           \
-    ,                                           \    
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Piezo_9,         \
-        .sz_description = "PIEZO 9"             \
-    }                                           \
-    ,                                           \    
-    {                                           \ 
-        .id = HMI_MenuItem_ID_Settings,         \
-        .sz_description = "SETTINGS"            \
-    }                                           \
+#define hmi_menu_item_vector_value      \
+{                                       \
+    {                                   \ 
+        .id = HMI_MenuItem_ID_Voltage,  \
+        .sz_description = "VOLTAGE"     \
+    }                                   \
+    ,                                   \
+    {                                   \ 
+        .id = HMI_MenuItem_ID_Current,  \
+        .sz_description = "CURRENT"     \
+    }                                   \
 }                               
 
 
