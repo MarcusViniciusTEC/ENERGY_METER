@@ -15,16 +15,6 @@ typedef enum
 {
     HMI_MenuItem_ID_Voltage = 0,
     HMI_MenuItem_ID_Current,
-    HMI_MenuItem_ID_Piezo_1,
-    HMI_MenuItem_ID_Piezo_2,
-    HMI_MenuItem_ID_Piezo_3,
-    HMI_MenuItem_ID_Piezo_4,
-    HMI_MenuItem_ID_Piezo_5,
-    HMI_MenuItem_ID_Piezo_6,
-    HMI_MenuItem_ID_Piezo_7,
-    HMI_MenuItem_ID_Piezo_8,
-    HMI_MenuItem_ID_Piezo_9,
-    HMI_MenuItem_ID_Settings
 }hmi_menu_item_id_t;
 
 typedef struct 

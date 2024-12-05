@@ -27,8 +27,6 @@ void hmi_current_deinit()
 /******************************************************************************/
 
 
-static uint8_t button = 0;
-
 void hmi_current_show_screen()
 {
 
