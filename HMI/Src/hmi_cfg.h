@@ -7,10 +7,12 @@
 #include "hmi_voltage.h"
 #include "hmi_current.h"
 #include "hmi_piezo.h"
+#include "button_types.h"
 
 
-#define DELAY_UPDATE_SCREENS            100
-#define HMI_NUMBER_OF_SCREENS_VECTOR    12
+
+#define DELAY_UPDATE_SCREENS           1
+#define HMI_NUMBER_OF_SCREENS_VECTOR    3
 
 #define hmi_screens_vector_deafult \
 {                                  \

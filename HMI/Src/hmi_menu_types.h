@@ -6,7 +6,7 @@
 
 
 #include "hmi_menu_cfg.h"
-#include "encoder.h"
+#include "button.h"
 #include "stdint.h"
 
 /******************************************************************************/

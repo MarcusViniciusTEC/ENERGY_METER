@@ -41,7 +41,7 @@ void hmi_current_show_data()
 
 /******************************************************************************/
 
-void hmi_current_update_data()
+void hmi_current_update_data(button_id_t button_id, button_press_type_t button_press_type)
 {
         
 

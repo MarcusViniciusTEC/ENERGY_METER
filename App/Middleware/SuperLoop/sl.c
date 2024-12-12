@@ -66,7 +66,7 @@ void sl_delay_ms(uint32_t ms_to_wait)
 void sl_reinit(void)
 {
   sl_data.must_reinit = 1;
-  wlog("ReInit GPIO Module");
+  //wlog("ReInit GPIO Module");
 }
 
 /******************************************************************************/

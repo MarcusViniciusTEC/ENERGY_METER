@@ -5,7 +5,7 @@
 #include "ssd1306_fonts.h"
 #include "hmi_menu.h"
 #include "hmi_menu_cfg.h"
-#include "encoder.h"
+#include "button.h"
 #include "stdio.h"
 
 
@@ -20,7 +20,23 @@ volatile uint32_t hmi_execution_rate_1ms_timer;
 static const hmi_screen_info_t hmi_screen_vector[HMI_NUMBER_OF_SCREENS_VECTOR] = hmi_screens_vector_deafult;
 static hmi_ctrl_t hmi_ctrl = {0};
 
+void hmi_showing_screen(void);
+void hmi_showing_data(void);
+void hmi_updating_data(button_id_t button_id, button_press_type_t button_press_type);
+void hmi_set_screen(hmi_screen_id_t hmi_screen_id);
+hmi_screen_id_t hmi_get_screen(void);
+
+static button_data_t buttons_data_t[] = 
+{
+    { BT_UP_GPIO_Port, BT_UP_Pin,       hmi_updating_data, 0, BUTTON_UP_ID, },
+    { BT_DOWN_GPIO_Port, BT_DOWN_Pin,   hmi_updating_data, 0, BUTTON_DOWN_ID, },
+    { BT_LEFT_GPIO_Port, BT_LEFT_Pin,   hmi_updating_data, 0, BUTTON_LEFT_ID, },
+    { BT_RIGHT_GPIO_Port, BT_RIGHT_Pin, hmi_updating_data, 0, BUTTON_RIGHT_ID, }
+};
+
 /******************************************************************************/
+
+
 
 void hmi_showing_screen(void)
 {
@@ -48,16 +64,17 @@ void hmi_showing_data(void)
 
 /******************************************************************************/
 
-void hmi_updating_data(void)
+void hmi_updating_data(button_id_t button_id, button_press_type_t button_press_type)
 {
     if(hmi_ctrl.hmi_screen_id < eHMI_NUMBER_OF_SCREENS_IDS)
     {
         if(hmi_screen_vector[hmi_ctrl.hmi_screen_id].update_data != NULL)
         {
-            hmi_screen_vector[hmi_ctrl.hmi_screen_id].update_data();
+            hmi_screen_vector[hmi_ctrl.hmi_screen_id].update_data(button_id, button_press_type);
         }
     }
 }
+
 
 /******************************************************************************/
 
@@ -113,6 +130,7 @@ void hmi_update(void)
     {
         hmi_ctrl.hmi_last_screen_id = hmi_ctrl.hmi_screen_id;
         hmi_ctrl.hmi_screen_id      = hmi_ctrl.hmi_next_screen_id;
+        hmi_ctrl.hmi_state = HMI_STATE_SHOWING_SCREEN;
     }
 
     switch (hmi_ctrl.hmi_state)
@@ -126,11 +144,9 @@ void hmi_update(void)
         hmi_ctrl.hmi_state = HMI_STATE_UPDATING_DATA;
         break;
     case HMI_STATE_UPDATING_DATA:
-        hmi_updating_data();
-        if(hmi_ctrl.delay == 0)
+        for (uint8_t index_buttons = 0; index_buttons < NUMBER_OF_BUTTONS; index_buttons++)
         {
-            hmi_ctrl.delay =   DELAY_UPDATE_SCREENS;
-            hmi_ctrl.hmi_state = HMI_STATE_SHOWING_SCREEN;
+            button_update_state(&buttons_data_t[index_buttons]);
         }
         break;
     default:

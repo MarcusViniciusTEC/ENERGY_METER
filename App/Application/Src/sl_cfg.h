@@ -20,12 +20,12 @@
   }                                                       \
   ,                                                       \
   {/*01-enc */                                            \
-    encoder_1ms_clock,               SL_STATUS_ENABLED,   \
-    encoder_init,                    SL_STATUS_ENABLED,   \
-    encoder_update,                  SL_STATUS_ENABLED,   \
-    encoder_deinit,                  SL_STATUS_ENABLED,   \
-    encoder_pexecution_rate_1ms_timer,                    \
-    ENCODER_EXECUTION_RATE_1MS_TIME,                      \
+    button_1ms_clock,               SL_STATUS_ENABLED,   \
+    button_init,                    SL_STATUS_ENABLED,   \
+    button_update,                  SL_STATUS_ENABLED,   \
+    button_deinit,                  SL_STATUS_ENABLED,   \
+    button_pexecution_rate_1ms_timer,                    \
+    BUTTON_EXECUTION_RATE_1MS_TIME,                      \
     SL_STATUS_ENABLED                                     \
   }                                                       \
   ,                                                       \
@@ -49,7 +49,7 @@
 // #include "tmp.h"
 // #include "din.h"
 #include "adc.h"
-#include "encoder.h"
+#include "button.h"
 #include "hmi.h"
 //#include "wlog.h"
 

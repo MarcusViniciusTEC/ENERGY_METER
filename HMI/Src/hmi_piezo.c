@@ -45,20 +45,19 @@ void hmi_piezo_show_data()
 /******************************************************************************/
 
 
-void hmi_piezo_update_data()
+void hmi_piezo_update_data(button_id_t button_id, button_press_type_t button_press_type)
 {
-        
-        button_encoder(&button);        
-        switch (button)
-        {
-        case BUTTON_SHORT_PRESS:
+            
+        // switch (button)
+        // {
+        // case BUTTON_SHORT_PRESS:
                
-                break;
-        case BUTTON_LONG_PRESS:
+        //         break;
+        // case BUTTON_LONG_PRESS:
                 
-                break;
-        default:
-                break;
-        }   
+        //         break;
+        // default:
+        //         break;
+        // }   
 
 }

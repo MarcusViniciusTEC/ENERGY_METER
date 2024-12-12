@@ -115,6 +115,6 @@ void sl_deinit(void);
 
 /******************************************************************************/
 
-extern void wlog(const char *format, ...);
+//extern void wlog(const char *format, ...);
 
 #endif/*__SL_H__*/

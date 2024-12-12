@@ -42,11 +42,10 @@ set(sources_SRCS
 ${PROJ_PATH}/HMI/Src/hmi_menu.c
 ${PROJ_PATH}/HMI/Src/hmi_voltage.c
 ${PROJ_PATH}/HMI/Src/hmi_current.c
-${PROJ_PATH}/HMI/Src/hmi_piezo.c
 ${PROJ_PATH}/HMI/Src/hmi.c
 
 ${PROJ_PATH}/App/Application/Src/adc.c
-${PROJ_PATH}/App/Application/Src/encoder.c
+${PROJ_PATH}/App/Application/Src/button.c
 
 ${PROJ_PATH}/DISPLAY/Src/ssd1306.c
 ${PROJ_PATH}/DISPLAY/Src/ssd_1306_fonts.c

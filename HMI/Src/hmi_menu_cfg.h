@@ -8,8 +8,8 @@
 #include "stdint.h"
 
 #define CURSOR_ITEM_MENU ">"
-#define HMI_MENU_NUMBER_OF_ITENS_VISIBLE    6
-#define HMI_MENU_OF_ITENS                   12
+#define HMI_MENU_NUMBER_OF_ITENS_VISIBLE    2
+#define HMI_MENU_OF_ITENS                   2
 
 
 

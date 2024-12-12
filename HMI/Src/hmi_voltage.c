@@ -4,7 +4,7 @@
 #include "hmi_voltage_cfg.h"
 #include "ssd1306.h"
 #include "ssd1306_fonts.h"
-#include "encoder.h"
+#include "button.h"
 #include "stdio.h"
 
 void hmi_voltage_init()
@@ -39,15 +39,12 @@ void hmi_voltage_show_screen()
 
 void hmi_voltage_show_data()
 {
-        char buff[10];
-        FORMAT_NUMBER_WITH_POINT(buff, sizeof(buff), adc_get_voltage_value_1ms());
-        ssd1306_SetCursor(60,60);
-        ssd1306_WriteString(buff, Font_7x10, White);
+
 } 
 
 /******************************************************************************/
 
-void hmi_voltage_update_data()
+void hmi_voltage_update_data(button_id_t button_id, button_press_type_t button_press_type)
 {
         
 }

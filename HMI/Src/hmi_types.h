@@ -6,7 +6,7 @@
 
 #include "hmi_cfg.h"
 #include "hmi_menu_types.h"
-#include "encoder.h"
+#include "button.h"
 
 /******************************************************************************/
 
@@ -14,16 +14,6 @@ typedef enum
 {   eHMI_ITEM_ID_MENU     = 0U,
     eHMI_ITEM_ID_VOLTAGE, 
     eHMI_ITEM_ID_CURRENT,
-    eHMI_ITEM_ID_PIEZO_1,
-    eHMI_ITEM_ID_PIEZO_2,
-    eHMI_ITEM_ID_PIEZO_3,
-    eHMI_ITEM_ID_PIEZO_4,
-    eHMI_ITEM_ID_PIEZO_5,
-    eHMI_ITEM_ID_PIEZO_6,
-    eHMI_ITEM_ID_PIEZO_7,
-    eHMI_ITEM_ID_PIEZO_8,
-    eHMI_ITEM_ID_PIEZO_9,
-    eHMI_ITEM_ID_SETTINGS,
     eHMI_NUMBER_OF_SCREENS_IDS
 }hmi_screen_id_t;
 
@@ -61,7 +51,7 @@ typedef struct {
     void (*deInit)(void);
     void (*show_screen)(void);
     void (*show_data)(void);
-    void (*update_data)(/*hmi_button_event_t *button_event*/);
+    void (*update_data)(button_id_t button_id, button_press_type_t button_press_type);
     void (*on_exit)(void);
 } hmi_screen_info_t;
 
