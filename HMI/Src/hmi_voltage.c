@@ -23,13 +23,12 @@ void hmi_voltage_deinit()
 
 void hmi_voltage_show_screen()
 {
-        ssd1306_Fill(Black);
-        ssd1306_SetCursor(10,10);
-        ssd1306_WriteString("gg:", Font_7x10, White);
-        ssd1306_SetCursor(10,20);
-        ssd1306_WriteString("gg1", Font_7x10, White);
-
-        ssd1306_UpdateScreen();   
+    ssd1306_Fill(Black);
+    ssd1306_SetCursor(46, 2);
+    ssd1306_WriteString("CURRENT", Font_7x10, White) ;
+    ssd1306_InvertRectangle(0,1,127,10);  
+    ssd1306_Line(0,13,128,13,White);
+    ssd1306_UpdateScreen();
 }           
 
 /******************************************************************************/

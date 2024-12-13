@@ -42,6 +42,8 @@ set(sources_SRCS
 ${PROJ_PATH}/HMI/Src/hmi_menu.c
 ${PROJ_PATH}/HMI/Src/hmi_voltage.c
 ${PROJ_PATH}/HMI/Src/hmi_current.c
+${PROJ_PATH}/HMI/Src/hmi_dashboard.c
+${PROJ_PATH}/HMI/Src/hmi_wifi.c
 ${PROJ_PATH}/HMI/Src/hmi.c
 
 ${PROJ_PATH}/App/Application/Src/adc.c

@@ -28,10 +28,10 @@ hmi_screen_id_t hmi_get_screen(void);
 
 static button_data_t buttons_data_t[] = 
 {
-    { BT_UP_GPIO_Port, BT_UP_Pin,       hmi_updating_data, 0, BUTTON_UP_ID, },
-    { BT_DOWN_GPIO_Port, BT_DOWN_Pin,   hmi_updating_data, 0, BUTTON_DOWN_ID, },
-    { BT_LEFT_GPIO_Port, BT_LEFT_Pin,   hmi_updating_data, 0, BUTTON_LEFT_ID, },
-    { BT_RIGHT_GPIO_Port, BT_RIGHT_Pin, hmi_updating_data, 0, BUTTON_RIGHT_ID, }
+    { {BT_UP_GPIO_Port, BT_UP_Pin     },  hmi_updating_data, 0, BUTTON_UP_ID,0,0 },
+    { {BT_DOWN_GPIO_Port, BT_DOWN_Pin },  hmi_updating_data, 0, BUTTON_DOWN_ID,0,0 },
+    { {BT_LEFT_GPIO_Port, BT_LEFT_Pin },  hmi_updating_data, 0, BUTTON_LEFT_ID,0,0 },
+    { {BT_RIGHT_GPIO_Port, BT_RIGHT_Pin}, hmi_updating_data, 0, BUTTON_RIGHT_ID,0,0 }
 };
 
 /******************************************************************************/

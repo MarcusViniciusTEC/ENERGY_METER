@@ -29,7 +29,7 @@
     {                               \
         .GPIO = BT_RIGHT_GPIO_Port, \
         .pin  = BT_RIGHT_Pin        \
-    }                               \                               
+    }                               \
 }                                       
                           
 

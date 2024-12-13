@@ -13,8 +13,14 @@
 
 typedef enum
 {
-    HMI_MenuItem_ID_Voltage = 0,
+    HMI_MenuItem_ID_Dashboard = 0U,
+    HMI_MenuItem_ID_WIFI,
+    HMI_MenuItem_ID_Voltage,
     HMI_MenuItem_ID_Current,
+    HMI_MenuItem_ID_WATTS,
+    HMI_MenuItem_ID_Cost,
+    HMI_Numbers_MenuItem
+
 }hmi_menu_item_id_t;
 
 typedef struct 

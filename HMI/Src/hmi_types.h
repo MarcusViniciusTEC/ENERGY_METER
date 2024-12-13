@@ -11,9 +11,14 @@
 /******************************************************************************/
 
 typedef enum
-{   eHMI_ITEM_ID_MENU     = 0U,
+{   
+    eHMI_ITEM_ID_MENU = 0U,
+    eHMI_ITEM_ID_DASHBOARD,
+    eHMI_ITEM_ID_WIFI,
     eHMI_ITEM_ID_VOLTAGE, 
     eHMI_ITEM_ID_CURRENT,
+    eHMI_ITEM_ID_WHATTS,
+    eHMI_ITEM_ID_COAST,
     eHMI_NUMBER_OF_SCREENS_IDS
 }hmi_screen_id_t;
 

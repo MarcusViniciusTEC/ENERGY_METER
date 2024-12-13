@@ -48,7 +48,7 @@ typedef struct
 typedef struct 
 {
     button_cfg_t cfg;
-    void(*button_handler)(uint16_t, button_press_type_t);
+    void(*button_handler)(button_id_t, button_press_type_t);
     button_pressed_state_t state;
     button_id_t id;
     FlagStatus pressed_pin_state;
