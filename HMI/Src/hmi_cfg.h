@@ -8,12 +8,16 @@
 #include "hmi_current.h"
 #include "hmi_dashboard.h"
 #include "hmi_wifi.h"
+#include "hmi_watts.h"
+#include "hmi_cost.h"
+#include "hmi_settings.h"
+#include "hmi_about.h"
 #include "button_types.h"
 
 
 
 #define DELAY_UPDATE_SCREENS           1
-#define HMI_NUMBER_OF_SCREENS_VECTOR    4
+#define HMI_NUMBER_OF_SCREENS_VECTOR    7
 
 #define hmi_screens_vector_deafult  \
 {                                   \
@@ -65,6 +69,46 @@
         hmi_current_show_data,      \
         hmi_current_update_data,    \
         hmi_current_on_exit         \
+    }                               \
+    ,                               \
+    {                               \
+        eHMI_ITEM_ID_WATTS,         \
+        hmi_watts_init,             \
+        hmi_watts_deinit,           \
+        hmi_watts_show_screen,      \
+        hmi_watts_show_data,        \
+        hmi_watts_update_data,      \
+        hmi_watts_on_exit           \
+    }                               \
+    ,                               \
+    {                               \
+        eHMI_ITEM_ID_COAST,         \
+        hmi_cost_init,              \
+        hmi_cost_deinit,            \
+        hmi_cost_show_screen,       \
+        hmi_cost_show_data,         \
+        hmi_cost_update_data,       \
+        hmi_cost_on_exit            \
+    }                               \
+    ,                               \
+    {                               \
+        eHMI_ITEM_ID_SETTINGS,      \
+        hmi_settings_init,          \
+        hmi_settings_deinit,        \
+        hmi_settings_show_screen,   \
+        hmi_settings_show_data,     \
+        hmi_settings_update_data,   \
+        hmi_settings_on_exit        \
+    }                               \
+    ,                               \
+    {                               \
+        eHMI_ITEM_ID_ABOUT,        \
+        hmi_about_init,             \
+        hmi_about_deinit,           \
+        hmi_about_show_screen,      \
+        hmi_about_show_data,        \
+        hmi_about_update_data,      \
+        hmi_about_on_exit           \
     }                               \
 }
 

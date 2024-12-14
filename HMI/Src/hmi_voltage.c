@@ -45,5 +45,22 @@ void hmi_voltage_show_data()
 
 void hmi_voltage_update_data(button_id_t button_id, button_press_type_t button_press_type)
 {
+    switch (button_id)
+    {
+        case BUTTON_RIGHT_ID:
+
+            break;
+        case BUTTON_LEFT_ID:
+
+            break;
+        case BUTTON_UP_ID:
+                      
+            break;
+        case BUTTON_DOWN_ID:
+                
+            break;
+    default:
+        break;
+    }
         
 }

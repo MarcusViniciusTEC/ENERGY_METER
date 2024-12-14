@@ -1,6 +1,6 @@
 
-#ifndef __PIEZO_H
-#define __PIEZO_H
+#ifndef __WIFI_H
+#define __WIFI_H
 
 #include "hmi_wifi_types.h"
 #include "button_types.h"

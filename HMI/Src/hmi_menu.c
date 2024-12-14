@@ -47,10 +47,10 @@ static void menu_show_visible_itens(void)
     ssd1306_InvertRectangle(0,1,127,10);  
     ssd1306_Line(0,13,128,13,White);
 
-    for (uint8_t index = 3; index < HMI_MENU_OF_ITENS; index++)
+    for (uint8_t index = 2; index < HMI_MENU_OF_ITENS-2; index++)
     {
         ssd1306_SetCursor(29, (index*10));
-        ssd1306_WriteString(hmi_menu_item_vector_value_default[(index-3) + hmi_menu_control.firt_visible_item_index].sz_description, Font_7x10, White);
+        ssd1306_WriteString(hmi_menu_item_vector_value_default[(index-2) + hmi_menu_control.firt_visible_item_index].sz_description, Font_7x10, White);
     }
 }
 
@@ -148,7 +148,7 @@ void hmi_menu_update_data(button_id_t button_id, button_press_type_t button_pres
                 hmi_set_screen(eHMI_ITEM_ID_CURRENT);
                 break;
             case HMI_MenuItem_ID_WATTS:
-                hmi_set_screen(eHMI_ITEM_ID_WHATTS);
+                hmi_set_screen(eHMI_ITEM_ID_WATTS);
                 break;
             case HMI_MenuItem_ID_Cost:
                 hmi_set_screen(eHMI_ITEM_ID_COAST);
