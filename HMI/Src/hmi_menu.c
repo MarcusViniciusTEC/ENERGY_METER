@@ -23,7 +23,7 @@ void hmi_menu_decrement_item_index(void)
     hmi_menu_control.selected_item_index--;
     if(hmi_menu_control.selected_item_index > eHMI_NUMBER_OF_SCREENS_IDS-2)
     {
-       hmi_menu_control.selected_item_index = eHMI_NUMBER_OF_SCREENS_IDS-2;
+       hmi_menu_control.selected_item_index = eHMI_ITEM_ID_DASHBOARD -1;
     }
 }
 
@@ -43,13 +43,13 @@ void hmi_menu_increment_item_index(void)
 static void menu_show_visible_itens(void)
 {
     ssd1306_SetCursor(46, 2);
-    ssd1306_WriteString("MENU", Font_7x10, White) ;
+    ssd1306_WriteString("GIOVANNA", Font_7x10, White) ;
     ssd1306_InvertRectangle(0,1,127,10);  
     ssd1306_Line(0,13,128,13,White);
 
     for (uint8_t index = 2; index < HMI_MENU_OF_ITENS-2; index++)
     {
-        ssd1306_SetCursor(29, (index*10));
+        ssd1306_SetCursor(1, (index*10));
         ssd1306_WriteString(hmi_menu_item_vector_value_default[(index-2) + hmi_menu_control.firt_visible_item_index].sz_description, Font_7x10, White);
     }
 }
@@ -63,11 +63,18 @@ static void hmi_menu_show_cursor(void)
     index = (hmi_menu_control.selected_item_index - hmi_menu_control.firt_visible_item_index) ;
     if(hmi_menu_control.selected_item_index  < HMI_MENU_NUMBER_OF_ITENS_VISIBLE)
     {
-        ssd1306_SetCursor(110,50);
+        ssd1306_SetCursor(113,50);
         ssd1306_WriteString(">", Font_7x10, White) ;
     }
     vector_retangle_selection = vector_retangle_default[index];
     ssd1306_InvertRectangle(vector_retangle_selection.point_x1,vector_retangle_selection.point_y1, vector_retangle_selection.point_x2,vector_retangle_selection.point_y2);
+}
+
+/******************************************************************************/
+
+void hmi_menu_update_1ms(void)
+{
+
 }
 
 /******************************************************************************/
@@ -77,17 +84,6 @@ static void hmi_menu_needs_atualize(void)
     ssd1306_Fill(Black);
     menu_show_visible_itens();
     hmi_menu_show_cursor();
-        //  char string[10];
-        //  char string1[10];
-        // //ssd1306_Fill(Black);
-        // sniprintf(string, sizeof(string), "%d", hmi_menu_control.selected_item_index );
-        // ssd1306_SetCursor(100,10);
-        // ssd1306_WriteString(string, Font_7x10, White);
-        // //memset(string, ' ', 10);
-        // sniprintf(string1, sizeof(string), "%d", (hmi_menu_control.selected_item_index - hmi_menu_control.firt_visible_item_index) );
-        // ssd1306_SetCursor(90,10);
-        // ssd1306_WriteString(string1, Font_7x10, White);
-
     ssd1306_UpdateScreen();
 }
 
@@ -112,12 +108,9 @@ void hmi_menu_deinit()
 
 void hmi_menu_show_screen()
 {
-   // ssd1306_Fill(Black);
-
-///ssd1306_UpdateScreen();
+    hmi_menu_needs_atualize();
 }
     
-
 /******************************************************************************/
 
 void hmi_menu_show_data()
@@ -152,6 +145,13 @@ void hmi_menu_update_data(button_id_t button_id, button_press_type_t button_pres
                 break;
             case HMI_MenuItem_ID_Cost:
                 hmi_set_screen(eHMI_ITEM_ID_COAST);
+                break;
+            case HMI_MenuItem_ID_Settings:
+                 hmi_set_screen(eHMI_ITEM_ID_SETTINGS);
+                break;
+            case HMI_MenuItem_ID_About:
+                hmi_set_screen(eHMI_ITEM_ID_ABOUT);
+                break;
             default:
                 break;
             }
@@ -178,7 +178,6 @@ void hmi_menu_update_data(button_id_t button_id, button_press_type_t button_pres
         hmi_menu_control.firt_visible_item_index  = HMI_MENU_NUMBER_OF_ITENS_VISIBLE;
         hmi_menu_needs_atualize();
     }
-
 
 }
 

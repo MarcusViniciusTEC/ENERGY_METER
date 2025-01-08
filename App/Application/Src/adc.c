@@ -12,7 +12,7 @@ volatile uint32_t adc_execution_rate_1ms_timer;
 /******************************************************************************/
 
 static moving_avg_t moving_avg;
-static uint16_t  adc[3];
+extern uint16_t  adc[3];
 
 /******************************************************************************/
 
@@ -36,6 +36,12 @@ void adc_delay_1ms(void)
 /******************************************************************************/
 
 uint16_t index_sum = 0;
+
+
+uint16_t adc_get_raw_votage(uint8_t index)
+{
+    return adc[index];
+}
 
 uint16_t adc_moving_average(uint8_t adc_index)
 {

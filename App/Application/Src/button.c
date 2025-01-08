@@ -9,46 +9,7 @@
 
 volatile uint32_t button_execution_rate_1ms_timer;
 
-
-
 /******************************************************************************/
-
-// void button_update_state(button_data_t *button_event)
-// {
-
-
-
-//     if(button_encoder_update.state == RESET && button_encoder_update.state_previous == SET && button_encoder_update.state_long_press == RESET)
-//     {
-//         button_encoder_update.long_press_tick = button_encoder_update.current_tick;
-//         button_encoder_update.state_previous = RESET;
-//         //*state = BUTTON_STOPED;
-//     }
-//     button_encoder_update.press_duration = button_encoder_update.current_tick - button_encoder_update.long_press_tick;
-//     if(button_encoder_update.state == RESET && button_encoder_update.state_long_press == RESET && button_encoder_update.press_duration >= TIME_LONG_PRESS)
-//     {
-//         // update_state = BUTTON_LONG_PRESS;
-//     }
-//     if(button_encoder_update.state == RESET && button_encoder_update.state_previous == RESET)
-//     {
-//         button_encoder_update.state_previous    = SET;
-//         button_encoder_update.state_long_press  = RESET;;
-//         if(button_encoder_update.press_duration < TIME_LONG_PRESS)
-//         {
-//             // update_state = BUTTON_SHORT_PRESS;
-//         }
-//         button_encoder_update.previous_tick = button_encoder_update.current_tick;  
-//     }
-  
-// }
-
-
-
-
-
-
-
-
 
 void button_update_state(button_data_t *button_event)
 {

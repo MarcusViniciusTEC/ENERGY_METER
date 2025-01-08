@@ -57,6 +57,7 @@ typedef struct {
     void (*init)(void);
     void (*deInit)(void);
     void (*show_screen)(void);
+    void (*eupdate_1ms)(void);
     void (*show_data)(void);
     void (*update_data)(button_id_t button_id, button_press_type_t button_press_type);
     void (*on_exit)(void);

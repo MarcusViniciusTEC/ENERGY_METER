@@ -22,7 +22,12 @@ void hmi_watts_deinit()
 
 /******************************************************************************/
 
+void hmi_watts_update_1ms()
+{
 
+}
+
+/******************************************************************************/
 
 void hmi_watts_show_screen()
 {
@@ -47,7 +52,24 @@ void hmi_watts_show_data()
 
 void hmi_watts_update_data(button_id_t button_id, button_press_type_t button_press_type)
 {
-            
-
+    switch (button_id)
+    {
+        case BUTTON_RIGHT_ID:
+        
+            break;
+        case BUTTON_LEFT_ID:
+            hmi_set_screen(eHMI_ITEM_ID_MENU);
+            break;
+        case BUTTON_UP_ID:
+                      
+            break;
+        case BUTTON_DOWN_ID:
+                
+            break;
+    default:
+        break;
+    }
+      
+        
 
 }

@@ -26,7 +26,7 @@ void hmi_updating_data(button_id_t button_id, button_press_type_t button_press_t
 void hmi_set_screen(hmi_screen_id_t hmi_screen_id);
 hmi_screen_id_t hmi_get_screen(void);
 
-static button_data_t buttons_data_t[] = 
+static button_data_t buttons_data[] = 
 {
     { {BT_UP_GPIO_Port, BT_UP_Pin     },  hmi_updating_data, 0, BUTTON_UP_ID,0,0 },
     { {BT_DOWN_GPIO_Port, BT_DOWN_Pin },  hmi_updating_data, 0, BUTTON_DOWN_ID,0,0 },
@@ -100,6 +100,10 @@ void hmi_1ms_clock(void)
             hmi_ctrl.delay--;
         }
     }
+
+
+    hmi_screen_vector[hmi_ctrl.hmi_next_screen_id].eupdate_1ms();
+
 }
 
 /******************************************************************************/
@@ -146,7 +150,7 @@ void hmi_update(void)
     case HMI_STATE_UPDATING_DATA:
         for (uint8_t index_buttons = 0; index_buttons < NUMBER_OF_BUTTONS; index_buttons++)
         {
-            button_update_state(&buttons_data_t[index_buttons]);
+            button_update_state(&buttons_data[index_buttons]);
         }
         break;
     default:

@@ -20,7 +20,7 @@ typedef enum
     HMI_MenuItem_ID_WATTS,
     HMI_MenuItem_ID_Cost,
     HMI_MenuItem_ID_Settings,
-    HMI_MenuItem_ID_Default,
+    HMI_MenuItem_ID_About,
     HMI_Numbers_MenuItem
 
 }hmi_menu_item_id_t;

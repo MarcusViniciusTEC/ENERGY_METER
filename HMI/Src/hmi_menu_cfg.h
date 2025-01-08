@@ -29,47 +29,42 @@ typedef struct
 {                                       \
     {                                   \
         .id = HMI_MenuItem_ID_Dashboard,\
-        .sz_description = "1.DASHBOARD" \
+        .sz_description = "1.Dashboard" \
     }                                   \
     ,                                   \
     {                                   \
         .id = HMI_MenuItem_ID_WIFI,     \
-        .sz_description = "2.WIFI"      \
+        .sz_description = "2.Wifi"      \
     }                                   \
     ,                                   \
     {                                   \
         .id = HMI_MenuItem_ID_Voltage,  \
-        .sz_description = "3.VOLTAGE"   \
+        .sz_description = "3.Voltage"   \
     }                                   \
     ,                                   \
     {                                   \
         .id = HMI_MenuItem_ID_Current,  \
-        .sz_description = "4.CURRENT"   \
+        .sz_description = "4.Current"   \
     }                                   \
     ,                                   \
     {                                   \
         .id = HMI_MenuItem_ID_WATTS,    \
-        .sz_description = "5.WATTS"     \
+        .sz_description = "5.Watts"     \
     }                                   \
     ,                                   \
     {                                   \
         .id = HMI_MenuItem_ID_Cost,     \
-        .sz_description = "6.COST "     \
+        .sz_description = "6.Cost "     \
     }                                   \
     ,                                   \
     {                                   \
         .id = HMI_MenuItem_ID_Settings, \
-        .sz_description = "7.SETTINGS " \
+        .sz_description = "7.Settings " \
     }                                   \
     ,                                   \
     {                                   \
         .id = HMI_MenuItem_ID_Settings, \
         .sz_description = "8.ABOUT "    \
-    }                                   \
-    ,                                   \
-    {                                   \
-        .id = HMI_MenuItem_ID_Default,  \
-        .sz_description = "9.ABOUT "    \
     }                                   \
 }                               
 
